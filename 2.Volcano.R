@@ -1,4 +1,5 @@
 ####Volcano
+library(EnhancedVolcano)
 x<-zzzzlps
 gene<-c("Il1a","Il1b","Il6","Nos2","Ccl2","Ccl3","Cxcl2","Ccl12")
 p1<-EnhancedVolcano(x,
