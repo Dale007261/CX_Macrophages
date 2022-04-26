@@ -1,5 +1,8 @@
 ####Go_Kegg_enrichment
-#LPSvsCon
+library(clusterProfiler)
+library(org.Mm.eg.db)
+library(tidyverse, lib.loc = "D:/R-4.0.3/library")
+#LPSvsCon----
 LPSvsConDEG<-read.csv("D:/CX_Macrophages/output/LPSvsConDEG.csv",header = T,sep = ",")
 gene<-LPSvsConDEG[,1]
 ego <- enrichGO(gene         = object,
@@ -18,7 +21,7 @@ kk <- enrichKEGG(gene         = object1$ENTREZID,
 kk <- setReadable(kk, OrgDb = org.Mm.eg.db, keyType="ENTREZID")
 kk<-kk@result
 write.csv(kk,"D:/CX_Macrophages/output/result/kegg_LPSvsCon.csv")
-#IFNvsCon
+#IFNvsCon----
 IFNvsConDEG<-read.csv("D:/CX_Macrophages/output/IFNvsConDEG.csv",header = T,sep = ",")
 gene<-LPSvsConDEG[,1]
 ego <- enrichGO(gene         = object,
@@ -37,7 +40,7 @@ kk <- enrichKEGG(gene         = object1$ENTREZID,
 kk <- setReadable(kk, OrgDb = org.Mm.eg.db, keyType="ENTREZID")
 kk<-kk@result
 write.csv(kk,"D:/CX_Macrophages/output/result/kegg_IFNvsCon.csv")
-#IFNvsIFNCX
+#IFNvsIFNCX----
 IFNvsIFNCXDEG<-read.csv("D:/CX_Macrophages/output/IFNvsIFNCXDEG.csv",header = T,sep = ",")
 gene<-IFNvsIFNCXDEG[,1]
 ego <- enrichGO(gene         = object,
@@ -56,7 +59,7 @@ kk <- enrichKEGG(gene         = object1$ENTREZID,
 kk <- setReadable(kk, OrgDb = org.Mm.eg.db, keyType="ENTREZID")
 kk<-kk@result
 write.csv(kk,"D:/CX_Macrophages/output/result/kegg_IFNvsIFNCX.csv")
-#lpsvslpscx
+#lpsvslpscx----
 LPSCXvsLPSDEG<-read.csv("D:/CX_Macrophages/output/LPSCXvsLPSDEG.csv",header = T,sep = ",")
 gene<-LPSCXvsLPSDEG[,1]
 ego <- enrichGO(gene         = object,
